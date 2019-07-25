@@ -10,6 +10,7 @@
     [ # Include the results of the hardware scan.
       <nixos-hardware/lenovo/thinkpad/x220>
       ./hardware-configuration.nix
+      ./users.nix
     ];
 
   boot.initrd.luks.devices.lollypop-encrypted-disk = {
@@ -113,21 +114,7 @@
     git
     libreoffice          # docs, spreadsheets, etc.
     #dev
-    (vscode-with-extensions.override {
-        # When the extension is already available in the default extensions set.
-        vscodeExtensions = with vscode-extensions; [
-          bbenoist.Nix
-        ]
-    # Concise version from the vscode market place when not available in the default set.
-      ++ vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "lunaryorn.hlint";
-          publisher = "";
-          version = "0.5.1";
-          sha256 = "0z3y69sfzka764wjbx31dywdq4d6bfsafv2gmmbpmxqmwfmy8sz4";
-        }
-	];
-    })
+    vscode
 
 
     spotify
