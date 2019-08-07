@@ -115,7 +115,7 @@
     libreoffice          # docs, spreadsheets, etc.
     #dev
     vscode
-
+    zlib
 
     spotify
 
@@ -181,7 +181,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.layout = "us";
+  services.xserver.layout = "gb";
   services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support. 
@@ -190,6 +190,9 @@
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+
+  # docker
+  virtualisation.docker.enable = true;
 
   # no mutable users
   users.mutableUsers = false;
